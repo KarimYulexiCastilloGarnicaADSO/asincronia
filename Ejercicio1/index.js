@@ -9,27 +9,27 @@ async function obtenerRepositorios() {
         //La linea const response = await fetch("index.json"); utiliza la funcion fetch para obetener datos
         //del archivo local "index.json"
         //Await se utiliza para esperar a que se cumpla la solicitud antes de continuar 
-        const response = await fetch("index.json");
+        let response = await fetch("index.json");
         //El resultado se almacena en la variable response
         //Parseo de datos json
         //La linea const user = await response.json(); convierte los datos obtenidos en formato json y los 
         //alamacena en la variable user
-        const user = await response.json();
+        let user = await response.json();
         //Obtencion de repositorios de github 
         //La linea const respuestaGithub = await fetch(`https://api.github.com/users/${user.name}/repos`); 
         //realiza una solicitud a la API de github para obtener los repositorios del usuario cuyo nombre esta
         //en user.name
         //El resultado se almacena en respuestaGithub
-        const respuestaGithub = await fetch(`https://api.github.com/users/${user.name}/repos`);
+        let respuestaGithub = await fetch(`https://api.github.com/users/${user.name}/repos`);
         //Parseo de datos json de github 
         //La linea const repositorios = await respuestaGithub.json(); convierte los datos obtenidos de github
         //en formato json y los almacena en la variable repositorios
-        const repositorios = await respuestaGithub.json();
+        let repositorios = await respuestaGithub.json();
         // Filtrar repositorios con la palabra "proyecto" en el nombre
         //La linea const proyectos = repositorios.filter(repo => repo.name.includes("comida")); filtra los 
         //repositorios en busca de aquellos cuyo nombre contiene la palabra "comida"
         //Los repositorios filtrados se almacenan en la variable proyectos  
-        const proyectos = repositorios.filter(repo => repo.name.includes("comida"));
+        let proyectos = repositorios.filter(repo => repo.name.includes("comida"));
         //Mostrar resultados en la consola 
         //La linea console.log(proyectos); muestra los repositorios filtrados en la consola 
         console.log(proyectos);

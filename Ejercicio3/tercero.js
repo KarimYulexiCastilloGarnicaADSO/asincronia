@@ -7,17 +7,17 @@ async function obtenerDatosAprendices() {
     //Aqui usamos la funcion fetch para realizar una solicitud HTTP al punto final /user.json. La palabra 
     //clave await garantiza que la ejcucion de la funcion espere hasta que se resuelva la promesa devuelta 
     //por fetch (es decir, se recuperen los datos)
-      const response = await fetch("/user.json"); 
+      let response = await fetch("/user.json"); 
       //Despues de obtener los datos , usamos el metodo json() en el objeto de respuesta para anlizar 
       //los datos JSON. De nuevo la palabra clave await garantiza que esperemos a que se analicen los datos 
       //antes de continuar 
-      const data = await response.json();
+      let data = await response.json();
       //SUponiendo que los datos obtenidos tiene una propiedad llamda users, esta linea filtra los usuarios
       //para incluir  solo a aquellos que tiene la propiedad aprendiz establecida en true
-      const aprendices = data.users.filter(usuario => usuario.aprendiz);
+      let aprendices = data.users.filter(usuario => usuario.aprendiz);
       //Creamos un nuevo array llamado datosAprendices mapeando sobre los usarios filtrados. Para cada 
       //usuario (Aprendiz) extraemos su nombre y generamos  una URL de Avatar utilizando la funcion obtenerAvatar
-      const datosAprendices = aprendices.map(aprendiz => ({
+      let datosAprendices = aprendices.map(aprendiz => ({
           Nombre: aprendiz.name,
           Avatar: obtenerAvatar(aprendiz.user)
       }));

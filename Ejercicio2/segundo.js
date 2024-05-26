@@ -11,7 +11,7 @@ fetch("/user.json")
         //La linea const aprendices = data.users.filter(usuario => usuario.aprendiz); filtra los usuarios para 
         //obtener solo aquellos que son aprendices (donde aprendiz es true)
         //Los aprendices filtrados se almacenan en la variable aprendices 
-        const aprendices = data.users.filter(usuario => usuario.aprendiz);
+        let aprendices = data.users.filter(usuario => usuario.aprendiz);
         //Mostrar los datos en consola
         //La linea console.log("Datos de los aprendices:"); muestra un mensaje en la consola 
         console.log("Datos de los aprendices:");

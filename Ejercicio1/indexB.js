@@ -1,34 +1,3 @@
-// (async () => {
-
-//     let response = await fetch('index.json');
-
-//     let NombrePerfil = "KarimYulexiCastilloGarnicaADSO";
-//     let respuestGit = await fetch(`https://api.github.com/users/${NombrePerfil}/Repos`);
-//     let usuariosGit = await respuestGit.json();
-//     console
-    
-//     let comidaRepos = usuariosGit.filter(x => x.name === "comida");
-//     console.log(comidaRepos);
-  
-// })();
-
-// (async () => {
-//     try {
-//       let response = await fetch('index.json');
-//       let NombrePerfil = "KarimYulexiCastilloGarnicaADSO"; // Replace with the desired GitHub username
-//       let respuestGit = await fetch(`https://api.github.com/users/${response.NombrePerfil}/repos`);
-//       let usuariosGit = await respuestGit.json();
-  
-//       console.log(usuariosGit); // Add this line to check the value of usuariosGit
-  
-//       let comidaRepos = usuariosGit.filter(x => x.name === "comida");
-//       console.log(comidaRepos);
-//     } catch (error) {
-//       console.error("hola", error); 
-//     }
-//   })();
-
-
 //Declaracion de la funcion obtenerRepositorios este funcion se define sin la palabra clave async. En lugar 
 //de usar async/await, utilizaremos promesas para manejar las operaciones asincronicas 
 function obtenerRepositorios() {
@@ -61,7 +30,7 @@ function obtenerRepositorios() {
           //La linea const proyectos = repositorios.filter(repo => repo.name.includes("comida")); filtra los
           //repositorios en busca de aquellos cuyo nombre contiene la palabra "comida"
           //Los repositorios filtrados se almacenan en la variable proyectos
-          const proyectos = repositorios.filter(repo => repo.name.includes("comida"));
+          let proyectos = repositorios.filter(repo => repo.name.includes("comida"));
           //Finalmente console.log(proyectos); muestra los repositorios filtrados en la consola 
           console.log(proyectos);
       })

@@ -12,12 +12,12 @@ fetch("/user.json")
       //La linea const aprendices = data.users.filter(usuario => usuario.aprendiz); filtra los usuarios para 
       //obtener solo aquellos que son aprendices (donde aprendiz es true)
       //Los aprendices filtrados se almacenan en la variable aprendices
-        const aprendices = data.users.filter(usuario => usuario.aprendiz);
+        let aprendices = data.users.filter(usuario => usuario.aprendiz);
         //Crear un array con los datos de los aprendices 
         //La linea const datosAprendices = aprendices.map(aprendiz => ({Nombre: aprendiz.name,Avatar: 
         //obtenerAvatar(aprendiz.user)})); crea un nuevo array con objetos que contienen el nombre y a URL 
         //del avatar de cada aprendiz 
-        const datosAprendices = aprendices.map(aprendiz => ({
+        let datosAprendices = aprendices.map(aprendiz => ({
             Nombre: aprendiz.name, 
             Avatar: obtenerAvatar(aprendiz.user)
         }));
