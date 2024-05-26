@@ -1,40 +1,3 @@
-// const filtrar = x => x.name === "comida" //Esta línea define una función de devolución de llamada filtrar que toma un objeto x como argumento. La función devuelve un valor booleano que indica si la propiedad nombre de x es igual a "comida".
-
-// (async () => {
-//     //console.log("hiola")
-//     let response = await fetch('index.json') //el await lo tenemos espereando que se cumpla la promesa 
-//     let user = await response.json() //aqui lo parseamos para que el archivo json sea respuesto de manera facil para nosotros
-//     let respuestGithub = await fetch(`https://api.github.com/users/${user.name}/repos`) //aqui buscamos enlace api para revisar los repositorios publicos de 
-//     //ese usuario
-//     let usuariosGithub = await respuestGithub.json() //aqui lo parseamos para que el archivo json sea respuesto de manera facil para nosotros
-//     console.log(usuariosGithub)
-
-//     usuariosGithub.forEach(element => { //aqui en vez de hacer un filter lo hacemos con un forEach 
-//         if(element.name === "comida") { //y si el lemento nombre es igual a Evaluacion 
-//             console.log(element) //entonces mostramos los elementos que que si son asi 
-//         }
-//     });
-//     //hola()
-// // let data = usuariosGit.filter(filtrar)
-// // console.log(data)
-// })
-
-// const filtrar = x => x.name === "proyecto"
-
-// async () => {
-//     let response = await fetch("index.json")
-//     let user = await response.json()
-//     let respuestaGithub = await fetch(`https://api.github.com/users/${user.name}/repos`)
-//     let usuariosGithub = await respuestaGithub.json()
-//     console.log(usuariosGithub)
-
-//     usuariosGithub.forEach(element => {
-//         if (element.name === "proyecto") {
-//             console.log(element)
-//         }
-//     });
-// }
-
 //La declaracion de la funcion obtenerRepositorios se define utilizando la palabra clave async 
 //esta funcion no toma ningun argumento y no devuelve ningun valor explicito 
 async function obtenerRepositorios() {
@@ -79,5 +42,5 @@ async function obtenerRepositorios() {
         console.error("Error al obtener los repositorios:", error);
     }
 }
-
+//Llamar la funcion obtenerRepositorios
 obtenerRepositorios();
