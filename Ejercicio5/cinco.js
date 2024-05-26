@@ -6,7 +6,7 @@ function validarMayusculas(str) {
     return /^[A-Z\s]+$/.test(str);
 }
 // Proxy para validar y transformar los nombres a mayúsculas
-const proxy = new Proxy({}, {
+let proxy = new Proxy({}, {
     //El manejador set se ejecuta cuando se asigna un valor a una propiedad del objeto proxy. En este caso, 
     //se verifica si la propiedad es 'name'.
     set: function(target, property, value) {
@@ -31,7 +31,7 @@ const proxy = new Proxy({}, {
 });
 
 // URL del archivo JSON
-const jsonURL = ("/user.json");
+let jsonURL = ("/user.json");
 
 // Realizar una solicitud HTTP para cargar el archivo JSON
 fetch(jsonURL)
@@ -41,7 +41,7 @@ fetch(jsonURL)
     //procesan los usuarios.
     .then(jsonData => {
         // Procesar los usuarios
-        const users = jsonData.users.map(user => new Proxy(user, proxy));
+        let users = jsonData.users.map(user => new Proxy(user, proxy));
         console.log(users);
         // Aquí puedes hacer cualquier otra operación con los usuarios transformados
     })
